@@ -1,7 +1,12 @@
 *.class
 
-# Mobile Tools for Java (J2ME)
+# Maven folder
 target/
+
+# Idea files
+.idea
+*.iml
+
 
 # Package Files #
 *.jar
