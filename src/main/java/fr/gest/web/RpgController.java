@@ -21,7 +21,6 @@ public class RpgController {
 
   @PostConstruct
   public void init() {
-    id= 0L;
     Rpg rpg = new Rpg();
     rpg.setName("D&D");
     rpg.setYear(1995);
