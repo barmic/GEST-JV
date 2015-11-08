@@ -4,6 +4,8 @@ import fr.gest.domain.Rpg;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
+import java.util.Collection;
+
 @Component
 public class RpgServiceImpl implements RpgService {
   @Autowired
@@ -17,5 +19,10 @@ public class RpgServiceImpl implements RpgService {
   @Override
   public Rpg insertRpg(Rpg rpg) {
     return rpgRepository.save(rpg);
+  }
+
+  @Override
+  public Collection<Rpg> getAll() {
+    return rpgRepository.findAll();
   }
 }
