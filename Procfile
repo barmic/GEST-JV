@@ -1,1 +1,1 @@
-web: java $JAVA_OPTS -Dserver.port=$PORT -jar target/*.jar --spring.datasource.driver-class-name=org.postgresql.Driver --spring.jpa.database-platform=org.hibernate.dialect.ProgressDialect
+web: java $JAVA_OPTS -Dserver.port=$PORT -jar target/*.jar --spring.datasource.driver-class-name=org.postgresql.Driver --spring.datasource.url=$DATABASE_JDBC_URL --spring.datasource.username=$DATABASE_JDBC_LOGIN --spring.datasource.password=$DATABASE_JDBC_PASSWD
