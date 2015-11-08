@@ -26,29 +26,30 @@ public class Main {
 
   @Bean
   public Connection getConnection() throws SQLException {
-    String username = "";
-    String password = "";
-    String dbUrl = "jdbc:h2:mem:mydb";
-
-    if (database_url != null && !database_url.isEmpty()) {
-      try {
-        URI dbUri = new URI(database_url);
-
-        String[] splitDbInfos = dbUri.getUserInfo().split(":");
-        username = splitDbInfos[0];
-        password = splitDbInfos[1];
-        dbUrl = "jdbc:postgresql://" + dbUri.getHost() + ':' + dbUri.getPort() + dbUri.getPath();
-      } catch (Exception e) {
-        log.warn("Impossible to use DATABASE_URL :  {}; error : {}", database_url, e.getMessage());
-        username = "";
-        password = "";
-        dbUrl = "jdbc:h2:mem:mydb";
-      }
-    }
-
-    log.info("url JDBC used : {}", dbUrl);
-
-    return DriverManager.getConnection(dbUrl, username, password);
+    throw new RuntimeException("We must call this method !");
+//    String username = "";
+//    String password = "";
+//    String dbUrl = "jdbc:h2:mem:mydb";
+//
+//    if (database_url != null && !database_url.isEmpty()) {
+//      try {
+//        URI dbUri = new URI(database_url);
+//
+//        String[] splitDbInfos = dbUri.getUserInfo().split(":");
+//        username = splitDbInfos[0];
+//        password = splitDbInfos[1];
+//        dbUrl = "jdbc:postgresql://" + dbUri.getHost() + ':' + dbUri.getPort() + dbUri.getPath();
+//      } catch (Exception e) {
+//        log.warn("Impossible to use DATABASE_URL :  {}; error : {}", database_url, e.getMessage());
+//        username = "";
+//        password = "";
+//        dbUrl = "jdbc:h2:mem:mydb";
+//      }
+//    }
+//
+//    log.info("url JDBC used : {}", dbUrl);
+//
+//    return DriverManager.getConnection(dbUrl, username, password);
   }
 
   public static void main(String[] args) {
