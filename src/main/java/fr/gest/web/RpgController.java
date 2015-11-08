@@ -14,6 +14,10 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import javax.annotation.PostConstruct;
 import java.sql.SQLException;
 
+/**
+ * This class allow to create a web page.
+ * Each method correspond to an url.
+ */
 @Controller
 public class RpgController {
   private Gson gson = new Gson();
@@ -22,6 +26,9 @@ public class RpgController {
 
   private Long id;
 
+  /**
+   * This methode create a first data in database for demo.
+   */
   @PostConstruct
   public void init() {
     Rpg rpg = new Rpg();

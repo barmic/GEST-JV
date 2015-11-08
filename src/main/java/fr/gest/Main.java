@@ -5,6 +5,10 @@ import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 
+/**
+ * This class is runner of application.
+ * Initialize Spring Boot with all default configuration.
+ */
 @Configuration
 @EnableAutoConfiguration
 @ComponentScan
