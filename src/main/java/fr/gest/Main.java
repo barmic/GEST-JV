@@ -21,7 +21,7 @@ public class Main {
   private final Logger log = LoggerFactory.getLogger(this.getClass());
   @Bean
   public Connection getConnection() throws URISyntaxException, SQLException {
-    System.getenv().entrySet().forEach(entry -> log.debug("{} -> {}", entry.getKey(), entry.getValue()));
+    System.getenv().entrySet().forEach(entry -> log.info("{} -> {}", entry.getKey(), entry.getValue()));
     String database_url = System.getenv("DATABASE_URL");
     String username = "";
     String password = "";
