@@ -6,12 +6,13 @@ import fr.gest.service.RpgService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import javax.annotation.PostConstruct;
 import java.sql.SQLException;
-import java.util.Collections;
 
 @Controller
 public class RpgController {
@@ -38,8 +39,20 @@ public class RpgController {
   }
 
   @RequestMapping("/list")
-  String template(Model model) {
+  String listing(Model model) {
     model.addAttribute("rpgs", rpgService.getAll());
     return "listing";
+  }
+
+  @RequestMapping("/insert")
+  String insert(Model model) {
+    model.addAttribute("rpg", new Rpg());
+    return "insert";
+  }
+
+  @RequestMapping(value = "/insert", method=RequestMethod.POST)
+  String insertResult(@ModelAttribute Rpg rpg, Model model) {
+    rpgService.insertRpg(rpg);
+    return listing(model);
   }
 }

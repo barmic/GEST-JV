@@ -5,21 +5,21 @@
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
 </head>
 <body>
-<p>Hello Spring Boot!</p>
-</body><table>
+<table>
     <thead>
-      <tr>
+    <tr>
         <th>Name</th>
         <th>Year</th>
         <th>Description</th>
-      </tr>
+    </tr>
     </thead>
     <tbody>
-      <tr th:each="rpg : ${rpgs}">
+    <tr th:each="rpg : ${rpgs}">
         <td th:text="${{rpg.name}}">13/01/2011</td>
         <td th:text="${rpg.year}">yes</td>
         <td th:text="${rpg.description}">Wireframe</td>
-      </tr>
+    </tr>
     </tbody>
-  </table>
+</table>
+</body>
 </html>
